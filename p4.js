@@ -6,7 +6,7 @@ const init = () => {
   //make heading a variable
   let h1 = document.querySelector('h1');
   //add header underline on hover
-  h1.onmouseover = addImg;
+ // h1.onmouseover = addImg;
 }
 
 const getData = () => {
@@ -16,28 +16,37 @@ const getData = () => {
   let url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&limit=10&api_key=RiXGFZpkcnIEB607G8uMPHxkuccKUtN6`;
   //fetch request and response
   fetch(url).then(response => response.json()).then(response => {
-    let gifData = response.data.map(data => data.images.downsized.url);
+    let gifData = response.data.map((data) => {
+       data = data.images.downsized.url;
+       appendImg(data);
+    });
     console.log(gifData);
-    for(let i = 0; i < gifData.length; i++){
+    /*for(let i = 0; i < gifData.length; i++){
     let theGif = document.createElement("img");
     theGif.src = gifData[i];
     theGif.style.marginTop = "2rem";
     document.querySelector('#giphy').appendChild(theGif);
-    }
+    }*/
    // insertGif.innerHTML = insertGif;
     console.log(response.data);
   });
 }
 
+const appendImg = gif => {
+  let theGif = document.createElement("img");
+  theGif.src = gif;
+  theGif.style.marginTop = "2rem";
+  document.querySelector('#giphy').appendChild(theGif);
+}
 
-  const addImg = () => {
+ /* const addImg = () => {
       //create empty img element
       let underline = document.createElement('img');
       //style and append underline
       underline.src = "images/underline.gif";
       underline.style.width = "40%";
       document.querySelector('h1').appendChild(underline);
-    }
+    }*/
 
 window.onload = init;
 
