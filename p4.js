@@ -11,7 +11,17 @@ const getData = () => {
   //define url of API
   let url = `http://api.giphy.com/v1/gifs/search?q=${searchInput}&limit=10&api_key=RiXGFZpkcnIEB607G8uMPHxkuccKUtN6`;
   //fetch request and response
-  fetch(url).then(response => response.json()).then(response => { let gifData = response.data; console.log(gifData)});
+  fetch(url).then(response => response.json()).then(response => {
+    let gifData = response.data.map(data => data.images.downsized.url);
+    console.log(gifData);
+    for(let i = 0; i < gifData.length; i++){
+    let theGif = document.createElement("img");
+    theGif.src = gifData[i];
+    document.querySelector('#giphy').appendChild(theGif);
+    }
+   // insertGif.innerHTML = insertGif;
+    console.log(response.data);
+  });
 }
 
 window.onload = init;
