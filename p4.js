@@ -3,6 +3,10 @@ const init = () => {
   let searchButton = document.querySelector('#searchbutton');
   //run API request on button submit
   searchButton.onclick = getData;
+  //make heading a variable
+  let h1 = document.querySelector('h1');
+  //add header underline on hover
+  h1.onmouseover = addImg;
 }
 
 const getData = () => {
@@ -17,6 +21,7 @@ const getData = () => {
     for(let i = 0; i < gifData.length; i++){
     let theGif = document.createElement("img");
     theGif.src = gifData[i];
+    theGif.style.marginTop = "2rem";
     document.querySelector('#giphy').appendChild(theGif);
     }
    // insertGif.innerHTML = insertGif;
@@ -24,11 +29,26 @@ const getData = () => {
   });
 }
 
-window.onload = init;
 
+  const addImg = () => {
+      //create empty img element
+      let underline = document.createElement('img');
+      //style and append underline
+      underline.src = "images/underline.gif";
+      underline.style.width = "40%";
+      document.querySelector('h1').appendChild(underline);
+    }
+
+window.onload = init;
 
 //(response => console.log(response.json()));  
 //}
+
+
+/*    let gifTen = gifData.map(function(gif) {
+      document.querySelector('#giphy').innerHTML = gif;
+    });*/
+
 
 /* fetch(url).then(response => {let myObj = response.json();
   console.log(myObj);*/
