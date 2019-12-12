@@ -4,12 +4,13 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 wrapper {
-    height: auto;
+    height: 23vh;
     background-color: rgb(67, 68, 69);
     width: 45%;
     display: flex;
@@ -60,3 +61,21 @@ button {
     height: auto;
     margin: 2rem 0;
 }
+
+/*@media only screen and (max-width : 1050px) {
+    wrapper {
+        width: 65%;
+    }
+    }*/
+
+    @media only screen and (max-width : 480px) {
+     wrapper{
+        width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 1024px) {
+        wrapper {
+            width: 65%;
+        }
+    }
