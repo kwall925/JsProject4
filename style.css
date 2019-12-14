@@ -13,6 +13,7 @@ wrapper {
     height: 23vh;
     background-color: rgb(67, 68, 69);
  /*   width: 45%;*/
+    /* width: auto;*/ 
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -29,6 +30,9 @@ wrapper {
       align-items: center;
       justify-content: center;
       flex-direction: column;
+    }
+    h1{
+        text-align: center;
     }
     .nav{
         display: flex;
@@ -55,6 +59,8 @@ wrapper {
   @media only screen and (min-width: 481px) and (max-width: 2500px) {
     wrapper {
         width: 65%;
+        /*height: auto;
+        max-width:*/
     }
 }
 
@@ -66,26 +72,32 @@ wrapper {
 .nav {
     display:flex;
     justify-content: center;
-    height: 20vh;
+    align-items: center;
+    /*height: 20vh;*/
+    height: auto;
 }
 
 h1 {
-    font-size: 3.2rem;
+    /*font-size: 3.2rem;*/
+    font-size: 7vh;
     color: white;
+    text-align: center;
 }
 
 .documentation {
-height: 1.2rem;
+/*height: 1.2rem;*/
+height: 3.2vh;
 margin-right: .5rem;
 }
 
 input {
-    height: 1.2rem;
+    /*height: 1.2rem;*/
+    height: 2.6vh;
 }
 
 button {
     height: 1.7rem;
-    margin-left: .5rem ;
+    margin-left: 1rem ;
     background-color: rgb(95, 56, 235);
     color: white;
     display: inline-block;
