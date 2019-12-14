@@ -2,6 +2,9 @@
 const init = () => {
   let searchButton = document.querySelector('#searchbutton');
   searchButton.onclick = getData;
+  /*
+  let h1 = document.querySelector('h1');
+  h1.onmouseover = addUnderline;*/
 }
 
 const getData = () => {
@@ -43,6 +46,22 @@ const repeatData = () =>{
   document.querySelector('#giphy').innerHTML = "";
   getData();
 }
+/*
+const addUnderline = () => {
+  let underline = document.createElement('img');
+  underline.src = "images/underline.gif";
+  underline.style.width = "inherit";
+  underline.style.height = "7rem";
+  underline.style.marginTop = "-6rem";
+  let h1 = document.querySelector('h1');
+  h1.appendChild(underline);
+  h1.onmouseleave = removeUnderline;
+  let removeUnderline = () => {
+    underline.innerHTML = '';
+  }
+}*/
+
+ 
 
 /*run top funtion on page load*/
 window.onload = init;
