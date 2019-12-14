@@ -2,9 +2,8 @@
 const init = () => {
   let searchButton = document.querySelector('#searchbutton');
   searchButton.onclick = getData;
-  /*
   let h1 = document.querySelector('h1');
-  h1.onmouseover = addUnderline;*/
+  h1.onmouseover = addUnderline;
 }
 
 const getData = () => {
@@ -46,7 +45,7 @@ const repeatData = () =>{
   document.querySelector('#giphy').innerHTML = "";
   getData();
 }
-/*
+
 const addUnderline = () => {
   let underline = document.createElement('img');
   underline.src = "images/underline.gif";
@@ -55,11 +54,10 @@ const addUnderline = () => {
   underline.style.marginTop = "-6rem";
   let h1 = document.querySelector('h1');
   h1.appendChild(underline);
-  h1.onmouseleave = removeUnderline;
+  h1.onmouseout = removeUnderline;
   let removeUnderline = () => {
-    underline.innerHTML = '';
-  }
-}*/
+  underline.innerHTML = '';  }
+}
 
  
 
