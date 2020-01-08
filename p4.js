@@ -46,6 +46,7 @@ const repeatData = () =>{
   getData();
 }
 
+/*
 const addUnderline = () => {
   let underline = document.createElement('img');
   underline.src = "images/underline.gif";
@@ -58,7 +59,7 @@ const addUnderline = () => {
   let removeUnderline = () => {
   underline.innerHTML = '';  }
 }
-
+*/
  
 
 /*run top funtion on page load*/
